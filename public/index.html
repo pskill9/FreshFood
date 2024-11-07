@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FreshFood - Meal Planning Made Easy</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">FreshFood</div>
+            <div class="nav-links">
+                <a href="#" class="active">Home</a>
+                <a href="#" id="saved-plans">Saved Plans</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="meal-planner">
+            <h1>Create Your Personalized Meal Plan</h1>
+            <form id="meal-plan-form">
+                <div class="form-group">
+                    <label for="family-size">Family Size</label>
+                    <input type="number" id="family-size" required min="1" max="10">
+                </div>
+
+                <div class="form-group">
+                    <label for="calorie-intake">Calorie Intake per Person (optional)</label>
+                    <input type="number" id="calorie-intake" placeholder="e.g., 2000">
+                </div>
+
+                <div class="form-group">
+                    <label for="preferences">Dietary Preferences</label>
+                    <select id="preferences" required>
+                        <option value="none">No Restrictions</option>
+                        <option value="vegetarian">Vegetarian</option>
+                        <option value="vegan">Vegan</option>
+                        <option value="gluten-free">Gluten-Free</option>
+                        <option value="dairy-free">Dairy-Free</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="days">Number of Days</label>
+                    <select id="days" required>
+                        <option value="1">1 Day</option>
+                        <option value="3">3 Days</option>
+                        <option value="5">5 Days</option>
+                        <option value="7">7 Days</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="cooking-time">Cooking Time Preference</label>
+                    <select id="cooking-time" required>
+                        <option value="quick">Quick (< 30 mins)</option>
+                        <option value="medium">Medium (30-60 mins)</option>
+                        <option value="long">Long (> 60 mins)</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="generate-btn">Generate Meal Plan</button>
+            </form>
+        </section>
+
+        <section class="meal-plan-results" style="display: none;">
+            <h2>Your Personalized Meal Plan</h2>
+            <div id="meal-plan-container"></div>
+            <div id="grocery-list-container"></div>
+            <button id="save-plan" class="save-btn">Save This Plan</button>
+        </section>
+
+        <div id="loading" class="loading" style="display: none;">
+            <div class="spinner"></div>
+            <p>Generating your meal plan...</p>
+        </div>
+    </main>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
