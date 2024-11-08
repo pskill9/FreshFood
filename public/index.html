@@ -6,6 +6,7 @@
     <title>FreshFood - Meal Planning Made Easy</title>
     <link rel="stylesheet" href="css/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
     <header>
@@ -30,6 +31,24 @@
                 <div class="form-group">
                     <label for="calorie-intake">Calorie Intake per Person (optional)</label>
                     <input type="number" id="calorie-intake" placeholder="e.g., 2000">
+                </div>
+
+                <div class="form-group">
+                    <label>Select Meals to Include</label>
+                    <div class="meal-selections">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="include-breakfast" name="meals" value="breakfast" checked>
+                            Breakfast
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="include-lunch" name="meals" value="lunch" checked>
+                            Lunch
+                        </label>
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="include-dinner" name="meals" value="dinner" checked>
+                            Dinner
+                        </label>
+                    </div>
                 </div>
 
                 <div class="form-group">
@@ -70,7 +89,16 @@
             <h2>Your Personalized Meal Plan</h2>
             <div id="meal-plan-container"></div>
             <div id="grocery-list-container"></div>
-            <button id="save-plan" class="save-btn">Save This Plan</button>
+            <div class="action-buttons">
+                <button id="save-plan" class="action-btn save-btn">
+                    <i class="fas fa-save"></i>
+                    Save This Plan
+                </button>
+                <button id="print-plan" class="action-btn print-btn">
+                    <i class="fas fa-print"></i>
+                    Print Plan
+                </button>
+            </div>
         </section>
 
         <div id="loading" class="loading" style="display: none;">
