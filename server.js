@@ -11,6 +11,12 @@ app.use(cors());
 app.use(express.json());
 app.use(express.static('public'));
 
+// Ensure data directory exists
+const dataDir = path.join(__dirname, 'data');
+if (!require('fs').existsSync(dataDir)) {
+    require('fs').mkdirSync(dataDir);
+}
+
 // Error handling middleware
 app.use((err, req, res, next) => {
     console.error(err.stack);

@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+const MealPlan = require('../models/mealPlan');
 const {
     generateMealPlanForDay,
     generateGroceryList,
@@ -84,6 +85,30 @@ router.post('/generate-meal-plan', async (req, res) => {
             details: error.message,
             response: error.response?.data
         });
+    }
+});
+
+// Save meal plan
+router.post('/save-meal-plan', async (req, res) => {
+    try {
+        const mealPlanData = req.body;
+        const mealPlan = new MealPlan(mealPlanData);
+        await mealPlan.save();
+        res.json({ message: 'Meal plan saved successfully', id: mealPlan.id });
+    } catch (error) {
+        console.error('Error saving meal plan:', error);
+        res.status(500).json({ error: 'Failed to save meal plan' });
+    }
+});
+
+// Get saved meal plans
+router.get('/saved-meal-plans', async (req, res) => {
+    try {
+        const mealPlans = await MealPlan.findAll();
+        res.json(mealPlans);
+    } catch (error) {
+        console.error('Error retrieving meal plans:', error);
+        res.status(500).json({ error: 'Failed to retrieve meal plans' });
     }
 });
 

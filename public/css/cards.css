@@ -1,0 +1,114 @@
+/* Day Container */
+.day-container {
+    background-color: white;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    margin-bottom: 2rem;
+}
+
+.day-container h3 {
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+/* Recipe Cards Grid */
+.recipes-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+/* Recipe Card */
+.recipe-card {
+    background-color: white;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.recipe-card h4 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-size: 1.25rem;
+}
+
+.recipe-meta {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.recipe-section {
+    margin-bottom: 1.5rem;
+}
+
+.recipe-section h5 {
+    color: var(--text-color);
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+}
+
+.ingredients-list,
+.instructions-list {
+    padding-left: 1.5rem;
+}
+
+.ingredients-list li,
+.instructions-list li {
+    margin-bottom: 0.5rem;
+}
+
+/* Grocery List */
+.grocery-list {
+    background-color: white;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.grocery-list h3 {
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.grocery-category {
+    margin-bottom: 1.5rem;
+}
+
+.grocery-category h4 {
+    color: var(--text-color);
+    margin-bottom: 0.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.grocery-category ul {
+    list-style: none;
+    padding-left: 1rem;
+}
+
+.grocery-category li {
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+}
+
+.grocery-category li:before {
+    content: "•";
+    color: var(--primary-color);
+    margin-right: 0.5rem;
+}
+
+/* Responsive Cards */
+@media (max-width: 768px) {
+    .recipes-container {
+        grid-template-columns: 1fr;
+    }
+}

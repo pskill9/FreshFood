@@ -1,27 +1,34 @@
-# FreshFood - Meal Planning Application
+# FreshFood 🥗
 
-A web application that generates personalized meal plans and corresponding grocery lists using LLM technology.
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Node.js Version](https://img.shields.io/badge/node-%3E%3D14.0.0-brightgreen.svg)](https://nodejs.org/)
 
-## Features
+A modern web application that generates personalized meal plans and grocery lists using AI technology. FreshFood helps you plan your meals efficiently while considering dietary preferences, family size, and time constraints.
 
-- Generate personalized meal plans based on:
-  - Family size
-  - Calorie intake preferences
+![FreshFood Demo](https://via.placeholder.com/800x400?text=FreshFood+Demo)
+
+## ✨ Features
+
+- 🎯 **Personalized Meal Plans** based on:
+  - Family size and portions
+  - Calorie intake goals
   - Dietary restrictions (vegetarian, vegan, gluten-free, dairy-free)
   - Number of days (1-7)
   - Cooking time preferences
-- Dynamic recipe generation using LLM
-- Comprehensive grocery lists with quantities
-- Save and revisit meal plans
-- Responsive design for all devices
+- 🤖 **AI-Powered Recipe Generation** using advanced LLM technology
+- 🛒 **Smart Grocery Lists** with categorized items and quantities
+- 💾 **Save & Share** your favorite meal plans
+- 📱 **Responsive Design** that works on all devices
+- 🖨️ **Print-Friendly** meal plans and shopping lists
 
-## Prerequisites
+## 🚀 Quick Start
+
+### Prerequisites
 
 - Node.js (v14 or higher)
-- MongoDB
 - LiteLLM Proxy Server
 
-## Installation
+### Installation
 
 1. Clone the repository:
 ```bash
@@ -34,79 +41,137 @@ cd freshfood
 npm install
 ```
 
-3. Create a .env file in the root directory with the following content:
-```
-MONGODB_URI=mongodb://localhost:27017/freshfood
+3. Create a `.env` file in the root directory:
+```env
 LITELLM_API_BASE=http://localhost:8000
 LITELLM_API_KEY=your_api_key_here
 PORT=3000
 ```
 
-4. Start MongoDB service on your machine
-
-5. Start the application:
+4. Launch the application:
 ```bash
+# Development mode
+npm run dev
+
+# Production mode
 npm start
 ```
 
-The application will be available at `http://localhost:3000`
+Visit `http://localhost:3000` to access the application.
 
-## Project Structure
+## 🏗️ Project Structure
 
 ```
 freshfood/
-├── public/
-│   ├── css/
-│   │   └── styles.css
-│   ├── js/
-│   │   └── app.js
-│   └── index.html
-├── models/
-│   └── mealPlan.js
-├── routes/
-│   └── api.js
-├── server.js
-├── .env
-├── package.json
-└── README.md
+├── data/               # Stored meal plans
+├── public/             # Static files
+│   ├── css/           # Stylesheets
+│   ├── js/            # Frontend JavaScript
+│   └── index.html     # Main HTML file
+├── models/            # Data models
+├── routes/            # API routes
+├── server.js          # Express server setup
+├── .env              # Environment variables
+└── package.json      # Project dependencies
 ```
 
-## API Endpoints
+## 🔌 API Endpoints
 
-- `POST /api/generate-meal-plan`: Generate a new meal plan
-- `POST /api/save-meal-plan`: Save a meal plan
-- `GET /api/saved-meal-plans`: Retrieve saved meal plans
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| POST | `/api/generate-meal-plan` | Generate a new meal plan |
+| POST | `/api/save-meal-plan` | Save a meal plan |
+| GET | `/api/saved-meal-plans` | Retrieve saved meal plans |
 
-## Technology Stack
+## 🛠️ Technology Stack
 
-- Frontend: HTML, CSS, JavaScript
-- Backend: Node.js, Express.js
-- Database: MongoDB
-- LLM Integration: LiteLLM Proxy Server
+- **Frontend**:
+  - HTML5, CSS3, JavaScript (ES6+)
+  - Responsive design with CSS Grid/Flexbox
+  - Font Awesome icons
+  - Google Fonts (Poppins)
 
-## Environment Variables
+- **Backend**:
+  - Node.js & Express.js
+  - File-based storage system
+  - LiteLLM for AI integration
+  - CORS enabled
 
-- `MONGODB_URI`: MongoDB connection string
-- `LITELLM_API_BASE`: LiteLLM proxy server base URL
-- `LITELLM_API_KEY`: API key for LiteLLM proxy server
-- `PORT`: Application port (default: 3000)
+## 🔧 Configuration
 
-## Development
+| Variable | Description | Default |
+|----------|-------------|---------|
+| `LITELLM_API_BASE` | LiteLLM proxy server URL | `http://localhost:8000` |
+| `LITELLM_API_KEY` | LiteLLM API key | Required |
+| `PORT` | Application port | 3000 |
 
-To start the application in development mode with hot reloading:
+## 💾 Data Storage
 
+FreshFood uses a simple and efficient file-based storage system:
+- Meal plans are stored as JSON files in the `data` directory
+- No database setup required
+- Easy to backup and migrate
+- Automatic data directory creation on startup
+
+## 🧪 Development
+
+Start the application in development mode with hot reloading:
 ```bash
 npm run dev
 ```
 
-## Contributing
+Run API tests:
+```bash
+node test-api.js
+```
+
+## 🤝 Contributing
+
+We welcome contributions! Please follow these steps:
 
 1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
+2. Create a feature branch: `git checkout -b feature/NewFeature`
+3. Make your changes
+4. Commit with clear messages: `git commit -m 'Add NewFeature'`
+5. Push to your branch: `git push origin feature/NewFeature`
+6. Open a Pull Request
 
-## License
+## 🔍 Troubleshooting
 
-This project is licensed under the MIT License - see the LICENSE file for details.
+### Common Issues
+
+1. **Permission Issues with Data Directory**
+   ```bash
+   # Check directory permissions
+   ls -la data/
+   # Set correct permissions
+   chmod 755 data/
+   ```
+
+2. **LiteLLM API Issues**
+   - Verify API key in `.env`
+   - Ensure LiteLLM proxy server is running
+   - Check server logs for detailed errors
+
+3. **Port Already in Use**
+   ```bash
+   # Find and kill process using port 3000
+   lsof -i :3000
+   kill -9 <PID>
+   ```
+
+## 📝 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 🙏 Acknowledgments
+
+- [LiteLLM](https://github.com/BerriAI/litellm) for AI integration
+- [Font Awesome](https://fontawesome.com) for icons
+- [Google Fonts](https://fonts.google.com) for typography
+
+---
+
+Made with ❤️ by [Your Name]
+
+*Note: Replace placeholder image, usernames, and other placeholder content before publishing.*

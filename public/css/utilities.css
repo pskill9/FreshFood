@@ -1,0 +1,90 @@
+/* Loading Overlay */
+.loading {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.9);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.spinner {
+    width: 50px;
+    height: 50px;
+    border: 5px solid var(--secondary-color);
+    border-top: 5px solid var(--primary-color);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+/* Notifications */
+.notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 15px 25px;
+    border-radius: 5px;
+    color: white;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    animation: slideIn 0.3s ease-out;
+}
+
+.notification.success {
+    background-color: var(--success-color);
+}
+
+.notification.error {
+    background-color: #f44336;
+}
+
+/* Print Styles */
+@media print {
+    header, 
+    .meal-planner,
+    .action-buttons,
+    .loading,
+    .notification,
+    .modal {
+        display: none !important;
+    }
+
+    body {
+        background-color: white;
+    }
+
+    .meal-plan-results {
+        display: block !important;
+        margin: 0;
+        padding: 0;
+    }
+
+    .recipe-card,
+    .grocery-list {
+        break-inside: avoid;
+        box-shadow: none;
+        border: 1px solid #ddd;
+        margin-bottom: 1rem;
+    }
+
+    .recipes-container {
+        display: block;
+    }
+
+    @page {
+        margin: 2cm;
+    }
+}
+
+/* Responsive Utilities */
+@media (max-width: 768px) {
+    .notification {
+        width: 90%;
+        right: 5%;
+        text-align: center;
+    }
+}
