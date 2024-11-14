@@ -5,7 +5,27 @@
 
 A modern web application that generates personalized meal plans and grocery lists using AI technology. FreshFood helps you plan your meals efficiently while considering dietary preferences, family size, and time constraints.
 
-![FreshFood Demo](https://via.placeholder.com/800x400?text=FreshFood+Demo)
+## 📸 Application Screenshots
+
+### Home Page & Meal Plan Generation
+![Home Page](screenshots/1.png)
+*The main interface where users can customize their meal plan preferences*
+
+### Smart Grocery List
+![Grocery List](screenshots/2.png)
+*Automatically generated grocery lists with categorized items and quantities*
+
+### Meal Plan Details
+![Meal Plan View](screenshots/3.png)
+*Detailed view of generated meal plans with nutritional information*
+
+### Recipe Management
+![Recipe Interface](screenshots/4.png)
+*Interface for viewing and managing individual recipes*
+
+### Settings & Preferences
+![Settings Page](screenshots/5.png)
+*Customize your dietary preferences and application settings*
 
 ## ✨ Features
 
@@ -174,4 +194,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 Made with ❤️ by [Your Name]
 
-*Note: Replace placeholder image, usernames, and other placeholder content before publishing.*
+*Note: Replace usernames and other placeholder content before publishing.*
