@@ -11,21 +11,21 @@ A modern web application that generates personalized meal plans and grocery list
 ![Home Page](screenshots/1.png)
 *The main interface where users can customize their meal plan preferences*
 
-### Smart Grocery List
-![Grocery List](screenshots/2.png)
-*Automatically generated grocery lists with categorized items and quantities*
-
 ### Meal Plan Details
-![Meal Plan View](screenshots/3.png)
+![Grocery List](screenshots/2.png)
 *Detailed view of generated meal plans with nutritional information*
+
+### Save & Load Recepies
+![Meal Plan View](screenshots/3.png)
+*Save and load recepies*
 
 ### Recipe Management
 ![Recipe Interface](screenshots/4.png)
 *Interface for viewing and managing individual recipes*
 
-### Settings & Preferences
+### Smart Grocery List
 ![Settings Page](screenshots/5.png)
-*Customize your dietary preferences and application settings*
+*Automatically generated grocery lists with categorized items and quantities*
 
 ## ✨ Features
 
